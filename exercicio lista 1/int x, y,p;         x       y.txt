@@ -1,0 +1,14 @@
+int x, y,*p;         x       y       p
+y=0;		                      
+p=&y;
+x=*p;
+x=4;
+(*p)++;
+--x;
+(*p)+=x;
+
+int *ptr= declarou um ponteiro ptr
+
+& = acessar endereço 
+
+*variável= pega o valor do endereço  ou atribui o valor
