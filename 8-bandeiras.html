@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 8 - Bandeiras com CSS</title>
+    <style>
+        /* Âncoras de Navegação no Topo */
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        /* D. Requisito A: Classe para definir dimensões padrão */
+        .bandeira {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 1. JAPÃO */
+        #japao {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* C. Combinação de seletor para o círculo */
+        #japao.bandeira > div.circulo {
+            width: 120px;
+            height: 120px;
+            background-color: #bc002d;
+            border-radius: 50%;
+        }
+
+        /* 2. ALEMANHA (Listras Horizontais) */
+        #alemanha > div {
+            height: 33.33%;
+            width: 100%;
+        }
+        #alemanha .preto { background-color: black; }
+        #alemanha .vermelho { background-color: #dd0000; }
+        #alemanha .amarelo { background-color: #ffcc00; }
+
+        /* 3. HOLANDA (Listras Horizontais) */
+        #holanda > div {
+            height: 33.33%;
+            width: 100%;
+        }
+        #holanda .vermelho { background-color: #ae1c28; }
+        #holanda .branco { background-color: white; }
+        #holanda .azul { background-color: #21468b; }
+
+        /* 4. ITÁLIA (Listras Verticais) */
+        #italia {
+            display: flex;
+        }
+        #italia > div {
+            width: 33.33%;
+            height: 100%;
+        }
+        #italia .verde { background-color: #009246; }
+        #italia .branco { background-color: white; }
+        #italia .vermelho { background-color: #ce2b37; }
+
+        /* 5. BRASIL */
+        #brasil {
+            background-color: #009b3a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #brasil.bandeira > div.losango {
+            width: 220px;
+            height: 130px;
+            background-color: #fedf00;
+            transform: rotate(0deg);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #brasil.bandeira > div.losango > div.circulo {
+            width: 75px;
+            height: 75px;
+            background-color: #002776;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Atividade 8 - Bandeiras Nacionais</h1>
+
+    <!-- D. Requisito D: Links com âncoras internas -->
+    <nav>
+        <a href="#japao">Bandeira Japão</a>
+        <a href="#alemanha">Bandeira Alemanha</a>
+        <a href="#holanda">Bandeira Holanda</a>
+        <a href="#italia">Bandeira Itália</a>
+        <a href="#brasil">Bandeira Brasil</a>
+    </nav>
+
+    <!-- 1. JAPÃO -->
+    <h3 id="japao">Japão</h3>
+    <div class="bandeira" id="japao">
+        <div class="circulo"></div>
+    </div>
+
+    <!-- 2. ALEMANHA -->
+    <h3 id="alemanha">Alemanha</h3>
+    <div class="bandeira" id="alemanha">
+        <div class="preto"></div>
+        <div class="vermelho"></div>
+        <div class="amarelo"></div>
+    </div>
+
+    <!-- 3. HOLANDA -->
+    <h3 id="holanda">Holanda</h3>
+    <div class="bandeira" id="holanda">
+        <div class="vermelho"></div>
+        <div class="branco"></div>
+        <div class="azul"></div>
+    </div>
+
+    <!-- 4. ITÁLIA -->
+    <h3 id="italia">Itália</h3>
+    <div class="bandeira" id="italia">
+        <div class="verde"></div>
+        <div class="branco"></div>
+        <div class="vermelho"></div>
+    </div>
+
+    <!-- 5. BRASIL -->
+    <h3 id="brasil">Brasil</h3>
+    <div class="bandeira" id="brasil">
+        <div class="losango">
+            <div class="circulo"></div>
+        </div>
+    </div>
+
+</body>
+</html>

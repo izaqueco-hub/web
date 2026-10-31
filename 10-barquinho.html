@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 10 - Barquinho Animado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* O CÉU (Fundo com Gradiente) */
+        body {
+            height: 100vh;
+            background: linear-gradient(to bottom, #87ceeb 0%, #e0f6ff 70%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 1. A NUVEM */
+        .nuvem {
+            width: 150px;
+            height: 50px;
+            background: white;
+            border-radius: 50px;
+            position: absolute;
+            top: 50px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+            animation: moverNuvem 20s linear infinite;
+        }
+
+        .nuvem::before {
+            content: '';
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: -30px;
+            left: 20px;
+        }
+
+        /* 2. O MAR */
+        .mar {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(to bottom, #0077be, #004466);
+            position: absolute;
+            bottom: 0;
+            z-index: 2; /* Fica por cima da base do barco para simular a água */
+            opacity: 0.9;
+        }
+
+        /* 3. O BARQUINHO */
+        .barco {
+            width: 120px;
+            height: 60px;
+            position: absolute;
+            bottom: 120px;
+            z-index: 1; /* Atrás da água do mar */
+            animation: navegar 12s linear infinite, balancar 2s ease-in-out infinite alternate;
+        }
+
+        /* Casco do Barco feito só com CSS */
+        .casco {
+            width: 100px;
+            height: 35px;
+            background: #8b4513;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Vela do Barco */
+        .vela {
+            width: 0;
+            height: 0;
+            border-left: 35px solid transparent;
+            border-bottom: 50px solid #ffffff;
+            position: absolute;
+            top: -25px;
+            left: 30px;
+        }
+
+        /* ----------------------------------------------------
+           ANIMAÇÕES COM @KEYFRAMES (O QUE COBRA NA PROVA!)
+        ---------------------------------------------------- */
+
+        /* Animação 1: Mover a Nuvem da Esquerda para a Direita */
+        @keyframes moverNuvem {
+            0% { left: -200px; }
+            100% { left: 100%; }
+        }
+
+        /* Animação 2: Mover o Barco Atravessando o Mar */
+        @keyframes navegar {
+            0% { left: -150px; }
+            100% { left: 100%; }
+        }
+
+        /* Animação 3: Balanço do Barco nas Ondas */
+        @keyframes balancar {
+            0% { transform: rotate(-4deg) translateY(0px); }
+            100% { transform: rotate(4deg) translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nuvem Animada -->
+    <div class="nuvem"></div>
+
+    <!-- Barquinho Animado -->
+    <div class="barco">
+        <div class="vela"></div>
+        <div class="casco"></div>
+    </div>
+
+    <!-- O Mar -->
+    <div class="mar"></div>
+
+</body>
+</html>

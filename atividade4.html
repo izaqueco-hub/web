@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 4 - Especificidade no CSS</title>
+    <style>
+        /* Regra 1: vale 1 ponto (tag li) */
+        li { color: red; }
+
+        /* Regra 2: vale 10 pontos (classe .churras) */
+        .churras { color: green; }
+
+        /* Regra 3: vale 10 pontos (classe .fruta) */
+        .fruta { color: gray; }
+
+        /* Regra 4: vale 12 pontos (tag li + tag li + classe .churras = 1+1+10) */
+        li + li.churras { color: black; }
+
+        /* Regra 5: vale 20 pontos (classe .churras + atributo = 10+10) */
+        .churras[draggable="true"] { color: magenta; }
+
+        /* Regra 6: vale 100 pontos para cada ID (#lip1, #lip2, #lip3) */
+        #lip1, #lip2, #lip3 { color: blue; }
+
+        /* Regra 7: vale 110 pontos (ID #lip3 + classe .fruta = 100+10) */
+        #lip3.fruta { color: orange; }
+
+        /* Regra 8: vale 112 pontos (tag ol + tag li + classe .churras + ID #lip5 = 1+1+10+100) */
+        ol > li.churras#lip5 { color: purple; }
+    </style>
+</head>
+<body>
+
+    <h1>Atividade 4 - Quem ganha cada cor?</h1>
+
+    <ol>
+        <!-- Item 1: Nao tem ID nem Classe. Ganha a Regra 1 (li). -->
+        <!-- COR: VERMELHO (Red) -->
+        <li id="lip0">Abacaxi</li>
+
+        <!-- Item 2: Nao tem ID na Regra 6 (era lip1). Ganha a Regra 3 (.fruta). -->
+        <!-- COR: CINZA (Gray) -->
+        <li id="lip1" class="fruta">Melão</li>
+
+        <!-- Item 3: Regra 6 fala do ID #lip2 (100 pts) e vence a Regra 3 (.fruta - 10 pts). -->
+        <!-- COR: AZUL (Blue) -->
+        <li id="lip2" class="fruta">Pera</li>
+
+        <!-- Item 4: Regra 7 (#lip3.fruta - 110 pts) vence a Regra 6 (#lip3 - 100 pts). -->
+        <!-- COR: LARANJA (Orange) -->
+        <li id="lip3" class="fruta">Uva</li>
+
+        <!-- Item 5: Ganha a Regra 3 (.fruta), pois nao tem regra de ID para o #lip4. -->
+        <!-- COR: CINZA (Gray) -->
+        <li id="lip4" class="fruta">Maçã</li>
+
+        <!-- Item 6: Primeiro .churras da lista. Ganha a Regra 2 (.churras - 10 pts). -->
+        <!-- COR: VERDE (Green) -->
+        <li class="churras">Carne</li>
+
+        <!-- Item 7: Eh um .churras logo depois de outro li. Ganha a Regra 4 (li+li.churras - 12 pts) da Regra 2 (10 pts). -->
+        <!-- COR: PRETO (Black) -->
+        <li class="churras">Linguiça</li>
+
+        <!-- Item 8: Tem o atributo draggable="true". Ganha a Regra 5 (.churras[draggable="true"] - 20 pts). -->
+        <!-- COR: MAGENTA (Magenta) -->
+        <li id="lip7" class="churras" draggable="true">Pão de alho</li>
+    </ol>
+
+</body>
+</html>

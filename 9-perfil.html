@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 9 - Perfil Profissional</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* Container Principal do Currículo */
+        .curriculo {
+            width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            display: flex;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Coluna Esquerda (Escura) */
+        .coluna-esquerda {
+            width: 30%;
+            background-color: #4a5568;
+            color: white;
+            padding: 20px;
+        }
+
+        .foto-perfil {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 20px auto;
+            border: 3px solid #cbd5e0;
+        }
+
+        .coluna-esquerda h3 {
+            border-bottom: 1px solid #718096;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .coluna-esquerda p {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #e2e8f0;
+            margin-bottom: 10px;
+        }
+
+        .coluna-esquerda strong {
+            display: block;
+            color: white;
+            margin-top: 8px;
+        }
+
+        /* Coluna Direita (Clara) */
+        .coluna-direita {
+            width: 70%;
+            padding: 30px;
+            color: #2d3748;
+        }
+
+        .nome {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .resumo {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 25px;
+        }
+
+        .coluna-direita h3 {
+            font-size: 18px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .item-experiencia {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cargo {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .empresa {
+            font-style: italic;
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 8px;
+        }
+
+        .periodo {
+            float: right;
+            font-size: 13px;
+            color: #718096;
+        }
+
+        .coluna-direita ul {
+            padding-left: 20px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="curriculo">
+        
+        <!-- COLUNA DA ESQUERDA -->
+        <div class="coluna-esquerda">
+            <!-- Foto de exemplo via placeholder -->
+            <img class="foto-perfil" src="https://via.placeholder.com/150" alt="Joana Barbosa">
+
+            <h3>Pessoal</h3>
+            <p><strong>Nome</strong> Joana Barbosa</p>
+            <p><strong>Endereço</strong> Rua da Paz, 250<br>7100-011 Lisboa</p>
+            <p><strong>Número de telefone</strong> 9630002121</p>
+            <p><strong>Email</strong> exemplos@cvmaker.pt</p>
+
+            <h3>Interesses</h3>
+            <p>Marketing digital, SEO, Leitura.</p>
+        </div>
+
+        <!-- COLUNA DA DIREITA -->
+        <div class="coluna-direita">
+            <h1 class="nome">Joana Barbosa</h1>
+            <p class="resumo">
+                Uma marketer digital com sentido de missão e com mais de três anos de experiência em conduzir iniciativas promocionais. Sou uma especialista em online marketing, lead generation e nurturing. Tenho uma comunicação exemplar, aptidões interpessoais e trabalho bem sob pressão de forma a atingir os objetivos.
+            </p>
+
+            <h3>Experiência profissional</h3>
+
+            <div class="item-experiencia">
+                <span class="periodo">2017 - 2019</span>
+                <div class="cargo">Junior SEO Marketer</div>
+                <div class="empresa">Cyanca, Lisboa</div>
+                <ul>
+                    <li>Página on/off SEO</li>
+                    <li>Estratégias de linkbuilding</li>
+                    <li>Criação de conteúdo relevante</li>
+                    <li>Trabalho com ferramentas online: Ahrefs, Google Analytics, Google Search Console, Google Adwords.</li>
+                </ul>
+            </div>
+
+            <div class="item-experiencia">
+                <span class="periodo">2015 - 2016</span>
+                <div class="cargo">Assistente de Vendas</div>
+                <div class="empresa">Salsa, Lisboa</div>
+                <ul>
+                    <li>Contribuição para os objetivos de vendas</li>
+                    <li>Gestão de inventário</li>
+                    <li>Apoio a clientes</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 
+      RESUMO PARA A PROVA:
+      1. Flexbox (display: flex) facilita dividir o layout em 2 colunas verticais.
+      2. border-radius: 50% deixa qualquer imagem quadrada perfeitamente redonda!
+    -->
+
+</body>
+</html>
