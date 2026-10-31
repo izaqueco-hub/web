@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - Layout Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container do Grid */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr; /* 3 colunas */
+            grid-template-rows: auto auto auto auto; /* 4 linhas */
+            gap: 12px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Estilo base para cada bloco */
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            padding: 30px 0;
+            color: #1a1a1a;
+        }
+
+        /* Blocos Amarelos */
+        .amarelo {
+            background-color: #ffe17d;
+        }
+
+        /* Blocos Rosa/Vermelho */
+        .rosa {
+            background-color: #f73859;
+            color: white;
+        }
+
+        /* Posicionamento do Layout idêntico ao PDF */
+        .item-1 { grid-column: 1 / -1; } /* Ocupa a linha toda do topo */
+        .item-2 { grid-column: 1; grid-row: 2; }
+        .item-3 { grid-column: 2; grid-row: 2 / span 2; } /* Ocupa 2 linhas no centro */
+        .item-4 { grid-column: 3; grid-row: 2; }
+        .item-5 { grid-column: 1; grid-row: 3 / span 2; } /* Ocupa 2 linhas à esquerda */
+        .item-6 { grid-column: 3; grid-row: 3; }
+        .item-7 { grid-column: 2 / span 2; grid-row: 4; } /* Ocupa 2 colunas no fundo */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box amarelo item-1">1</div>
+        <div class="box rosa item-2">2</div>
+        <div class="box amarelo item-3">3</div>
+        <div class="box rosa item-4">4</div>
+        <div class="box amarelo item-5">5</div>
+        <div class="box rosa item-6">6</div>
+        <div class="box amarelo item-7">7</div>
+    </div>
+
+</body>
+</html>

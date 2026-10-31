@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4 - Layout Adaptativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container Principal em Desktop */
+        .container {
+            display: grid;
+            grid-template-columns: 120px 1fr 120px;
+            grid-template-rows: auto auto 1fr auto auto;
+            gap: 10px;
+            width: 100%;
+            max-width: 900px;
+            min-height: 90vh;
+        }
+
+        /* Estilo comum dos blocos */
+        .box {
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cores baseadas na imagem do PDF */
+        .header { background-color: #e6a100; grid-column: 1 / -1; }
+        .banner { background-color: #d93829; grid-column: 2; }
+        .left-aside { background-color: #238036; grid-row: 2 / 5; grid-column: 1; }
+        .main-content { background-color: #3b82f6; grid-column: 2; min-height: 350px; }
+        .right-aside { background-color: #e6a100; grid-row: 2 / 5; grid-column: 3; }
+        .low-content { background-color: #238036; grid-column: 2; }
+        .footer { background-color: #3b82f6; grid-column: 1 / -1; }
+
+        /* Adaptativo para telas menores / dispositivos móveis */
+        @media screen and (max-width: 768px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .left-aside, .right-aside, .banner, .main-content, .low-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box header">Header</div>
+        <div class="box left-aside">Left Aside</div>
+        <div class="box banner">Banner</div>
+        <div class="box main-content">
+            Main Content<br>Width: 437, Height: 573
+        </div>
+        <div class="box right-aside">Right Aside</div>
+        <div class="box low-content">Low Content</div>
+        <div class="box footer">Footer</div>
+    </div>
+
+</body>
+</html>
